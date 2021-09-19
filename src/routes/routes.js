@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { isAuthenticated } from '../services/auth/auth';
-import Blank from "../views/blank"
+import Blank from '../views/blank';
+import BooksPagination from '../views/BooksPagination';
 
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
@@ -20,9 +21,7 @@ const Routes = () => (
     <Router>
         <Switch>
             <Route exact path={["/","/dashboard"]} component={Blank}/>
-            <PrivateRoute path="/create-article" component={Blank}/>
-            <PrivateRoute path="/all-articles" component={Blank}/>
-            <PrivateRoute path="/user-config" component={Blank}/>
+            <PrivateRoute path="/BooksPagination" component={BooksPagination}/>
         </Switch>
     </Router>
 );
