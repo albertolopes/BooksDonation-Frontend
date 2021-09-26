@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
+import ButtonGroup from './ButtonGroup'
 
 export default function SimpleContainer() {
   return (
@@ -9,15 +10,16 @@ export default function SimpleContainer() {
       <CssBaseline />
       <Container 
         sx={ style }
+
+        maxWidth="sx"
       >
-       Testando
+        <ButtonGroup/>
       </Container>
     </React.Fragment>
   );
 }
 
 const style = {
-    bgcolor: '#000000',     
-    height: '50px',
+  bgcolor:"#888888",
 }
 

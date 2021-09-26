@@ -6,11 +6,14 @@ import Box from '@mui/material/Box';
 export default function VariantButtonGroup() {
   return (
     <Box
-      sx={ buttonStyle }
-    >
-      
-      <ButtonGroup size="small" variant="text" aria-label="text button group" fullWidth={true}>
+      sx={ boxStyle }
+    >      
+      <ButtonGroup size="small" variant="string" color="inherit" aria-label="text button group" fullWidth={true}>
         <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
@@ -18,11 +21,15 @@ export default function VariantButtonGroup() {
   );
 }
 
-const buttonStyle = {
+const boxStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     '& > *': {
       m: 1,
-    },
-  }
+  },
+}
+
+const buttonStyle ={
+  bgcolor:"#e3f2fd"
+}
