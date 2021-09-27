@@ -9,13 +9,13 @@ export default function VariantButtonGroup() {
       sx={ boxStyle }
     >      
       <ButtonGroup size="small" variant="string" color="inherit" aria-label="text button group" fullWidth={true}>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
+        <Button>Ficção</Button>
+        <Button>Romance</Button>
+        <Button>Didáticos</Button>
+        <Button>Infantil</Button>
+        <Button>Política</Button>
+        <Button>História</Button>
+        <Button>Ciência</Button>
       </ButtonGroup>
     </Box>
   );

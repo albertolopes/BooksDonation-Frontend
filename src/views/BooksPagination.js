@@ -1,6 +1,7 @@
 
-import React from 'react';
+import * as React from 'react';
 
+import { styled, alpha } from '@mui/material/styles';
 import { Box, Grid } from '@material-ui/core';
 import AppBar from '../components/AppBar'
 import Container from '../components/Container';
@@ -8,13 +9,14 @@ import ButtonGroup from '../components/ButtonGroup'
 import Divider from '@mui/material/Divider';
 import NestedList from '../components/NestedList';
 import Dropdown from '../components/Dropdown';
+import Paper from '@mui/material/Paper';
 
 export default function BooksPagination(props) {
     return (
       <>
       
         <AppBar/>
-        <Container 
+        <Container
             sx={ styleContainer1 } maxWidth={false}
         >
             <ButtonGroup/>
@@ -29,14 +31,31 @@ export default function BooksPagination(props) {
         }}>
             <ButtonGroup/>
         </Box> */}
+        <Grid container>           
+            <Grid item xs={2}>
+                <Grid container>
+                    <Grid item xs={11}>
+                        <NestedList/>   
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Divider orientation="vertical"/>  
+                    </Grid>                
+                </Grid>           
+                           
+            </Grid>        
+            <Grid item xs={10}>
+                <Box sx={ BoxStyle }>
+                    <Dropdown/>                        
+                </Box>
+            </Grid>
+        </Grid>
+{/* 
         <Grid
         container
-        spacing={12}
-        >
-           
+        spacing={3}
+        >           
 
             <Grid
-                item
                 lg={2}
                 sm={2}
                 xl={2}
@@ -46,7 +65,6 @@ export default function BooksPagination(props) {
             </Grid>
 
             <Grid
-                item
                 lg={0}
                 sm={0}
                 xl={0}
@@ -62,37 +80,40 @@ export default function BooksPagination(props) {
                 xs={9}
             >
                 <Grid
-                item
-                lg={12}
-                sm={3}
-                xl={3}
-                xs={12}
+                     lg={12, {display: 'flex'}}
+                     sm={12, {display: 'flex'}}
+                     xl={12, {display: 'flex'}}
+                     xs={12, {display: 'flex'}}
                 >
-                    <Box  sx={{
-                    bgcolor: 'primary.dark',
-                    // '&:hover': {
-                    //     backgroundColor: 'secondary.main',
-                    //     opacity: [0.9, 0.8, 0.7],
-                    // },
-                    }}>
-                        <Dropdown></Dropdown>
+                    <Box sx={ BoxStyle }>
+                        <Dropdown/>                        
                     </Box>
+                    <Divider/>
                 </Grid>
             </Grid>
             
-        </Grid>
+        </Grid> */}
       </>
     );
 }
+
+const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
+const BoxStyle = {
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    bgcolor: 'background.paper',
+  }
+  
 
 
 const styleContainer1 = {     
     bgcolor: '#cfe8fc',
     alignItems: 'center',
-}
-
-const styleContainer2 = {    
-    alignItems: 'center',
-    top:'50px'
 }
 
